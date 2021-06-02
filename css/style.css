@@ -1046,3 +1046,20 @@ input:focus {
     font-size: 14px;
     font-weight: 500;
 }
+
+#top-nav .how-to-use span {
+    margin-right: 24px;
+}
+
+#top-nav .social-media p {
+    margin-bottom: 0;
+}
+
+#top-nav .social-media .icons {
+    margin: 0 2rem;
+}
+
+#top-nav .social-media i {
+    font-size: 24px;
+    color: #C9C9C9;
+}
