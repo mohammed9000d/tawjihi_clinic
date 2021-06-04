@@ -111,6 +111,23 @@ header hr {
     padding: 10px;
 }
 
+#top-nav .person-img img {
+    height: 58px;
+    width: 58px;
+    margin-left: 5px;
+}
+
+#top-nav .person-img .logout p {
+    margin-bottom: 0;
+    color: #F18C2B;
+    font-size: 12px;
+}
+
+#top-nav .person-img .logout a {
+    color: #888888;
+    font-size: 12px;
+}
+
 #top-nav .circle {
     border-radius: 22px;
     background: #FFFFFF;
@@ -161,7 +178,7 @@ header hr {
     display: inline-flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 39px;
+    border-radius: 39px !important;
     border-color: transparent;
     padding: 12px 23px;
     background: rgb(241, 140, 43);
@@ -1060,6 +1077,20 @@ input:focus {
 }
 
 #top-nav .social-media i {
-    font-size: 24px;
+    font-size: 24px !important;
     color: #C9C9C9;
+}
+
+.login {
+    margin-top: 28px;
+}
+
+.login span {
+    color: #0A293E;
+    font-size: 12px;
+}
+
+.login a {
+    color: #F18C2B;
+    font-size: 12px;
 }
