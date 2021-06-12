@@ -81,12 +81,38 @@
                     <img src="img/std2.png" alt="">
                 </div>
                 <div class="col-12 col-md-6 text-center">
-                    <a href="#" class="btn btn-primary start-exam">
+                    <a href="#" class="btn btn-primary start-exam video-btn" data-toggle="modal" data-src="https://player.vimeo.com/video/58385453?badge=0" data-target="#myModal">
                         <div class="circle-exam">
                             <i class="fas fa-play"></i>
                         </div>
                         <span>فيديو ارشادي</span>
                     </a>
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document" style="margin-top:6rem;">
+                            <div class="modal-content">
+
+
+                                <div class="modal-body">
+
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                                    <!-- 16:9 aspect ratio -->
+                                    <div class="embed-responsive embed-responsive-16by9">
+                                        <iframe class="embed-responsive-item" src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
                     <div class="black-border"></div>
                     <div class="about-exam">
                         <h4>حول الاختبار</h4>
@@ -124,6 +150,72 @@
                 </div>
             </div>
         </div>
+    </section>
+
+
+
+    <section id="modal">
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div id="timer-section">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="hero-text text-center">
+                                        <p>موقع دروب جامعية قيد البناء والتطوير</p>
+                                        <h2>انتظرونا قريبا </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row text-center timer">
+                                <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                                    <span class="c-1" id="days"></span>
+                                    <p>يوم</p>
+                                </div>
+                                <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                                    <span class="c-2" id="hours"></span>
+                                    <p>ساعة</p>
+                                </div>
+                                <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                                    <span class="c-3" id="minutes"></span>
+                                    <p>دقيقة</p>
+                                </div>
+                                <div class="col-3 d-flex flex-column justify-content-center align-items-center">
+                                    <span class="c-4" id="seconds"></span>
+                                    <p>ثواني</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="social-media">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 text-center">
+                                        <p>تابعونا على مواقع التواصل الإجتماعي</p>
+                                    </div>
+                                    <div class="social col-12 text-center d-flex justify-content-center align-items-center" id="social-media-icons">
+                                        <a class="d-flex justify-content-center align-items-center" href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+
+                                        <a class="d-flex justify-content-center align-items-center" href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+
+                                        <a class="d-flex justify-content-center align-items-center" href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
     </section>
 
 
@@ -221,6 +313,43 @@
     <script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/script.js"></script>
+
+    <script>
+        $(document).ready(function() {
+
+            // Gets the video src from the data-src on each button
+
+            var $videoSrc;
+            $('.video-btn').click(function() {
+                $videoSrc = $(this).data("src");
+            });
+            console.log($videoSrc);
+
+
+
+            // when the modal is opened autoplay it  
+            $('#myModal').on('shown.bs.modal', function(e) {
+
+                // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+                $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+            })
+
+
+
+            // stop playing the youtube video when I close the modal
+            $('#myModal').on('hide.bs.modal', function(e) {
+                // a poor man's stop video
+                $("#video").attr('src', $videoSrc);
+            })
+
+
+
+
+
+
+            // document ready  
+        });
+    </script>
 </body>
 
 </html>

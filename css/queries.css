@@ -7,14 +7,29 @@
 
 @media only screen and (min-width: 1200px) {
     /* Unites */
+    /* POP UP */
+    .modal-dialog {
+        max-width: 800px;
+        margin: 30px auto;
+    }
+    .modal-body {
+        position: relative;
+        padding: 0px;
+    }
+    .close {
+        position: absolute;
+        right: -30px;
+        top: 0;
+        z-index: 999;
+        font-size: 2rem;
+        font-weight: normal;
+        color: #fff;
+        opacity: 1;
+    }
+    /* END POP UP */
     .space {
         margin-left: 97px;
     }
-    /* .space-2 {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    } */
     .dis {
         display: flex;
         flex-direction: column;
